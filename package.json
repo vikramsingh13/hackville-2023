@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/vikramsingh13/hackville-2023#readme",
   "dependencies": {
+    "cohere-ai": "^5.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
