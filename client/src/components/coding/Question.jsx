@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function Question() {
+export default function Question({question}) {
   return (
-    <div>Question</div>
+    <div class="">
+      {question}
+    </div>
   )
 }
