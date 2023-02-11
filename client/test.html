@@ -23,7 +23,7 @@
         #sky {
             height: 750px;
             width: 1000px;
-            background-color: #e2e8f0;
+            background-image: url(./sun.png);
         }
         #ground {
             position: absolute;
@@ -36,6 +36,12 @@
             width: 200px;
             padding: 10px;
             border: 2px dashed black;
+        }
+        .prop {
+            width: 100px;
+        }
+        .prop2 {
+            width: 160px;
         }
         .first{
             position: absolute;
@@ -56,6 +62,16 @@
             position: absolute;
             top: 300px;
             left: 805px;
+        }
+        .fifth{
+            position: absolute;
+            top: 600px;
+            left: 335px;
+        }
+        .sixth{
+            position: absolute;
+            top: 600px;
+            left: 835px;
         }
         .tag{
             display: flex;
@@ -112,6 +128,10 @@
             <div id="sky"></div>
             <div id="ground"></div>
             <a class="wrapper">
+            <img class="prop first" src="./prop1.png">
+            <img class="prop third" src="./prop1.png">
+            <img class="prop2 fifth" src="./prop2.png">
+            <img class="prop2 sixth" src="./prop2.png">
             <div class="first" data-fixed="broken">
                 <img class="building hover" src="./building1.png">
                 <div class="tag">Print()</div>
