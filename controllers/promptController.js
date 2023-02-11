@@ -9,7 +9,7 @@ cohere.init(process.env.COHERE_API_KEY)
 const getCohereData = asyncHandler(async(req, res) => {
     //model can be large or medium
     //medium by default now
-    const model = "medium"
+    const model = "command-xlarge-nightly"
     if(req.query.prompt){
         cohere.init(process.env.COHERE_API_KEY);
         const response = await cohere.generate({
