@@ -8,9 +8,9 @@ function App() {
 
   return (
     <div className="">
-		<Landing/>
+		{/* <Landing/> */}
     <Coding 
-      question= "Print the color red in python"
+      question= "Welcome to the potato nursery! <br> First you must help name our potato children, for this we’ll need the print command.Here is an example of the syntax"
       chat = "Your output will show up here"/>
     </div>
   )
