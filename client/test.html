@@ -23,7 +23,8 @@
         #sky {
             height: 750px;
             width: 1000px;
-            background-image: url(./sun.png);
+            background-image: url(./background.jpg);
+            background-size: cover;
         }
         #ground {
             position: absolute;
@@ -37,8 +38,12 @@
             padding: 10px;
             border: 2px dashed black;
         }
+        .building.smaller {
+            width: 150px;
+        }
         .prop {
             width: 100px;
+            margin-top: 20px;
         }
         .prop2 {
             width: 160px;
@@ -50,8 +55,8 @@
         }
         .second{
             position: absolute;
-            top: 300px;
-            left: 305px;
+            top: 350px;
+            left: 330px;
         }
         .third{
             position: absolute;
@@ -60,23 +65,22 @@
         }
         .fourth{
             position: absolute;
-            top: 300px;
-            left: 805px;
+            top: 350px;
+            left: 830px;
         }
         .fifth{
             position: absolute;
-            top: 600px;
-            left: 335px;
+            top: 580px;
+            left: 365px;
         }
         .sixth{
             position: absolute;
-            top: 600px;
-            left: 835px;
+            top: 580px;
+            left: 865px;
         }
         .tag{
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
             margin-top: 10px;
             padding: 5px;
             border: 2px dashed black;
@@ -126,7 +130,7 @@
     <div id="container">
         <div id="wrapper" style="position: relative">
             <div id="sky"></div>
-            <div id="ground"></div>
+            <!-- <div id="ground"></div> -->
             <a class="wrapper">
             <img class="prop first" src="./prop1.png">
             <img class="prop third" src="./prop1.png">
@@ -138,7 +142,7 @@
                 <div class="tag2">FIX ME</div>
             </div>
             <div class="second" data-fixed="broken">
-                <img class="building hover" src="./building2.png">
+                <img class="building smaller hover" src="./building2.png">
                 <div class="tag">I/O</div>
                 <div class="tag2">FIX ME</div>
             </div>
@@ -148,15 +152,13 @@
                 <div class="tag2">FIX ME</div>
             </div>
             <div class="fourth" data-fixed="broken">
-                <img class="building hover" src="./building4.png">
+                <img class="building smaller hover" src="./building4.png">
                 <div class="tag">Dict</div>
                 <div class="tag2">FIX ME</div>
             </div>
         </div>
         <div class="tag">
-            <a href="https://www.freepik.com/free-vector/space-base-buildings-astronauts-mars-isometric-set-3d_7250377.htm">
-            Image by macrovector</a> on Freepik
-            <p style="margin: 0px">Please excuse our programmer art</p>
+            Please excuse our programmer art
         </div>
     </div>
 </body>
