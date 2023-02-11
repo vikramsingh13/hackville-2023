@@ -8,9 +8,9 @@ const Coding = ({question, chat}) => {
         <div class="flex h-screen">
             <Question 
                 question={question}
-                class="w-1/3 bg-gray-300 p-4 border-2 border-dark-orange-500"                
+                class="w-1/3 p-4 border-2 border-dark-orange-500"                
             />
-            <div class="flex-1 flex-col bg-gray-400 p-4 border-2 border-dark-orange-500">
+            <div class="flex-1 flex-col p-4 border-2 border-dark-orange-500">
                 <Console
                     class=""
                 />
