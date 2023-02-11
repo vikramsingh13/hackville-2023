@@ -10,11 +10,11 @@ const getCohereData = asyncHandler(async(req, res) => {
     //model can be large or medium
     //medium by default now
     const model = "medium"
-    if(req.body.prompt){
+    if(req.query.prompt){
         cohere.init(process.env.COHERE_API_KEY);
         const response = await cohere.generate({
             model: model,
-            prompt: req.prompt,
+            prompt: req.query.prompt,
             max_tokens: 50,
             temperature: 1,
         });
