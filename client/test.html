@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #wrapper {
+            padding: 40px;
+            border: 2px dashed black;
+        }
+        #sky {
+            height: 750px;
+            width: 1000px;
+            background-color: #e2e8f0;
+        }
+        #ground {
+            position: absolute;
+            top: 50%;
+            height: calc(50% - 40px);
+            width: calc(100% - 80px);
+            background-color: #fdba74;
+        }
+        .building {
+            width: 200px;
+            padding: 10px;
+            border: 2px dashed black;
+        }
+        .first{
+            position: absolute;
+            top: 380px;
+            left: 55px;
+        }
+        .second{
+            position: absolute;
+            top: 300px;
+            left: 305px;
+        }
+        .third{
+            position: absolute;
+            top: 380px;
+            left: 555px;
+        }
+        .fourth{
+            position: absolute;
+            top: 300px;
+            left: 805px;
+        }
+        .tag{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+            padding: 5px;
+            border: 2px dashed black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .tag2{
+            display: none;
+            position: absolute;
+            left: calc(50% - 82px);
+            top: -60px;
+            width: 150px;
+            font-size: 2rem;
+            padding: 5px;
+            border: 2px dashed #ef4444;
+            color: #ef4444;
+            font-family: 'Courier New', Courier, monospace
+        }
+        .hover:hover{
+            background-color: #ef444466;
+        }
+        div[data-fixed="broken"] .tag2{
+            display: flex;
+            justify-content: center;
+            background-color: #ef444466;
+            animation: broken 1s infinite alternate;
+        }
+        div[data-fixed="fixed"] .tag2{
+            display: flex;
+            justify-content: center;
+            background-color: #4ade8044;
+            border: 2px dashed #22c55e;
+            color: #22c55e;
+        }
+        div[data-fixed="fixed"] img{
+            background-color: #4ade8044;
+        }
+        div[data-fixed="fixed"] img:hover{
+            background-color: #4ade8044;
+        }
+        @keyframes broken {
+            from {opacity: 0.3}
+            to {opacity: 1.0}
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="wrapper" style="position: relative">
+            <div id="sky"></div>
+            <div id="ground"></div>
+            <a class="wrapper">
+            <div class="first" data-fixed="broken">
+                <img class="building hover" src="./building1.png">
+                <div class="tag">Print()</div>
+                <div class="tag2">FIX ME</div>
+            </div>
+            <div class="second" data-fixed="broken">
+                <img class="building hover" src="./building2.png">
+                <div class="tag">I/O</div>
+                <div class="tag2">FIX ME</div>
+            </div>
+            <div class="third" data-fixed="broken">
+                <img class="building hover" src="./building3.png">
+                <div class="tag">Vars</div>
+                <div class="tag2">FIX ME</div>
+            </div>
+            <div class="fourth" data-fixed="broken">
+                <img class="building hover" src="./building4.png">
+                <div class="tag">Dict</div>
+                <div class="tag2">FIX ME</div>
+            </div>
+        </div>
+        <div class="tag">
+            <a href="https://www.freepik.com/free-vector/space-base-buildings-astronauts-mars-isometric-set-3d_7250377.htm">
+            Image by macrovector</a> on Freepik
+            <p style="margin: 0px">Please excuse our programmer art</p>
+        </div>
+    </div>
+</body>
+</html>
