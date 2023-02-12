@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [showCoding, setShowCoding]= useState(true);
+  const [showCoding, setShowCoding]= useState(false);
 
   useEffect(() => {
     fetchData();
@@ -24,8 +24,12 @@ function App() {
     setLocalDialoguesLS(JSON.stringify(data));
   }, [data]);
 
-  const handleNavClick = (e) => {
-
+  const handleNavClick = () => {
+    if(showCoding){
+      setShowCoding(false);
+    } else {
+      setShowCoding(true);
+    }
   };
 
   const fetchData = async () => {
@@ -46,7 +50,7 @@ function App() {
 
   return (
     <div className="bg-orange-300">
-      {showCoding ? <Coding /> : <Landing handleNavClick={handleNavClick}/>}
+      {showCoding ? <Coding handleNavClick={handleNavClick}/> : <Landing handleNavClick={handleNavClick}/>}
     </div>
   );
 }
