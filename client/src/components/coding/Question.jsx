@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 export default function Question({ question }) {
   return (
     <div class="w-1/3 bg-orange-200">
-      	<h1 className="text-4xl text-center m-0 bg-slate-800 text-white p-8 border-b border-dashed border-black">
+      	<h1 className="text-3xl text-center m-0 bg-slate-800 text-white p-6 border-black">
 			Question
 	  	</h1>
 		<div className="bg-neutral-50 m-5 rounded-lg">
