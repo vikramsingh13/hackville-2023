@@ -2,9 +2,31 @@ import React, { useState, useEffect } from "react";
 import Chat from "./Chat";
 import Console from "./Console";
 import Question from "./Question";
+import axios from "axios";
 import { getCurrentPrompt, getCurrentText } from "../../utils";
 
+
 const Coding = ({ handleNavClick }) => {
+  const [chatArray, setChatArray] = useState([['ai', 'hello'], ['human', 'world']]);
+
+  const conCater = async (consoleIn) => {
+    let prompt = getCurrentPrompt();
+    let request = prompt + " " + consoleIn;
+
+    let aiResponse = await axios.get(
+      "https://hackville-2023.vercel.app/api/prompts?prompt=" + request + '"'
+    );
+
+    setChatArray([
+      ...chatArray,
+      ["ai", aiResponse.data.message.body.generations[0].text],
+    ]);
+  };
+
+  const conCaterHuman = async(chatIn) => {
+    setChatArray([...chatArray, ['human', chatIn]]);
+    console.log(chatArray);
+  }
 
   return (
     <div className="flex h-screen">
@@ -13,8 +35,8 @@ const Coding = ({ handleNavClick }) => {
         className="w-1/3 border-2 border-dark-orange-500"
       />
       <div className="flex-1 flex-col border-2 h-1/2 border-dark-orange-500">
-        <Console className="" />
-        <Chat chat={"Hi chat"} className="" />
+        <Console className="" conCater={conCater} />
+        <Chat className="" chatArray={chatArray} conCaterHuman={conCaterHuman} />
       </div>
 
       <button
@@ -28,9 +50,6 @@ const Coding = ({ handleNavClick }) => {
       </button>
     </div>
   );
-  function conCater(prompt, consoleIn) {
-    let textOut = prompt.concat(" ", consoleIn);
-  }
 };
 
 export default Coding;

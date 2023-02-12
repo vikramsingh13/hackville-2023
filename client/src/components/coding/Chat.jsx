@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Request from "./bubbles/Request";
 import Response from "./bubbles/Response";
+import uuid from "react-uuid";
 
-export default function Chat({ chat }) {
+export default function Chat({ chatArray, conCaterHuman }) {
+  const [chatValue, setChatValue] = useState("");
+  const [chatArrayState, setChatArrayState] = useState(chatArray);
+
+  const handleOnTextChange = (e) => {
+    setChatValue(e.target.value);
+  };
+
+  useEffect(() => {
+    setChatArrayState([...chatArray]);
+  }, [chatArray]);
+
   return (
     <div className="w-full bg-orange-300">
       <div className="flex justify-around h-full">
@@ -16,16 +28,26 @@ export default function Chat({ chat }) {
               id="chat-input"
               cols="30"
               rows="1"
+              onChange={(e) => handleOnTextChange(e)}
+              value={chatValue}
             ></textarea>
-            <button className="bg-green-300 p-1 rounded-full pl-6 pr-6 active:bg-green-400">
+            <button
+              className="bg-green-300 p-1 rounded-full pl-6 pr-6 active:bg-green-400"
+              onClick={() => conCaterHuman(chatValue)}
+            >
               Send
             </button>
           </div>
 
           {/* Bubbles */}
-          <div className="overflow-y-scroll flex flex-col-reverse">
-            <Request text={chat} />
-            <Response text={chat} />
+          <div className="overflow-y-scroll flex flex-col">
+            {chatArrayState.map((chatEl) => {
+              if (chatEl[0] === "ai") {
+                return <Response text={chatEl[1]} key={uuid()} />;
+              } else {
+                return <Request text={chatEl[1]} key={uuid()} />;
+              }
+            })}
           </div>
         </div>
 

@@ -28,6 +28,7 @@ export function getCurrentPrompt() {
   let dialogues = JSON.parse(getLocalDialoguesLS());
 
   console.log(dialogues[index].prompt);
+  return dialogues[index].prompt;
 }
 
 export function getCurrentText() {
