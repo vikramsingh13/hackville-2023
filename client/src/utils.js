@@ -27,7 +27,7 @@ export function getCurrentPrompt() {
   let index = getQuestionIndexLS();
   let dialogues = JSON.parse(getLocalDialoguesLS());
 
-  console.log(dialogues[index].prompt);
+  console.log(dialogues[index]);
   return dialogues[index].prompt;
 }
 
@@ -36,4 +36,16 @@ export function getCurrentText() {
   let dialogues = JSON.parse(getLocalDialoguesLS());
 
   return dialogues[index].text;
+}
+
+export function isCheckCode() {
+  let index = getQuestionIndexLS();
+  let dialogues = JSON.parse(getLocalDialoguesLS());
+
+  if(dialogues[index].checkCode === undefined) {
+    return false;
+  }
+  else{
+    return true;
+  }
 }

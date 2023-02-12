@@ -13,6 +13,10 @@ const Coding = ({ handleNavClick }) => {
 
   const conCater = async (consoleIn) => {
     let prompt = getCurrentPrompt();
+    if(prompt === "undefined"){
+      prompt = "";
+      return;
+    }
     let request = prompt + " " + consoleIn;
 
     try {
