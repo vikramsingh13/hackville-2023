@@ -25,14 +25,14 @@ export function setLocalDialoguesLS(data) {
 
 export function getCurrentPrompt() {
   let index = getQuestionIndexLS();
-  let dialogues = getLocalDialoguesLS();
+  let dialogues = JSON.parse(getLocalDialoguesLS());
 
-  console.log(dialogues[index].prompt);
+  console.log(dialogues);
 }
 
 export function getCurrentText() {
   let index = getQuestionIndexLS();
-  let dialogues = getLocalDialoguesLS();
+  let dialogues = JSON.parse(getLocalDialoguesLS());
 
-  console.log(dialogues[index].prompt);
+  console.log(dialogues);
 }
