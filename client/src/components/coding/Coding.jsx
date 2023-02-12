@@ -18,13 +18,18 @@ const Coding = ({ handleNavClick }) => {
   useEffect(() => {
     let temp = getCurrentText();
     setQuestion(temp);
-  },[question]);
+  },[]);
 
   useEffect(() => {
     if(getCurrentPrompt() !== ""){
       conCater("");
     }
   },[]);
+
+  const updateQuestion = async() => {
+    let temp = getCurrentText();
+    setQuestion(temp);
+  }
 
   const conCater = async (consoleIn) => {
     let reqPrompt = getCurrentPrompt();
@@ -66,14 +71,16 @@ const Coding = ({ handleNavClick }) => {
     
     if(prompt && !code){
       console.log(code);
-      setConsoleDisabled(true);
+      //setConsoleDisabled(true);
       await conCater("");
     } else if(prompt && code){
       //todo
-      setConsoleDisabled(false);
+      //setConsoleDisabled(false);
     }
     let index = getQuestionIndexLS();
+    index = parseInt(index);
     setQuestionIndexLS(index + 1);
+    updateQuestion();
   }
 
   return (
