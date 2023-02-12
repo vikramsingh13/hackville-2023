@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Chat from "./Chat";
 import Console from "./Console";
 import Question from "./Question";
+// import setQuestionIndexLS, { getQuestionIndexLS, setLocalDialoguesLS} from "../../utils";
 
 const Coding = ({ question, chat, handleNavClick }) => {
+
   return (
     <div className="flex h-screen">
       <Question
@@ -15,20 +17,19 @@ const Coding = ({ question, chat, handleNavClick }) => {
         <Chat chat={chat} className="" />
       </div>
 
-      <button 
-        className="bg-red-500 text-xl p-3 active:bg-red-300 absolute bottom-5 left-3 rounded-full text-white"
+      <button
+        className="bg-red-500 text-xl p-3 active:bg-red-300 fixed bottom-5 left-3 rounded-full text-white"
         onClick={handleNavClick}
       >
         &lt;&lt;&lt;
       </button>
-      <button className="w-2/12 bg-green-600 text-xl rounded-full active:bg-green-400 text-white p-3 absolute bottom-5 left-20">
+      <button className="w-2/12 bg-green-600 text-xl rounded-full active:bg-green-400 text-white p-3 fixed bottom-5 left-20">
         Next
       </button>
     </div>
   );
-  function conCater(prompt, consoleIn){
+  function conCater(prompt, consoleIn) {
     let textOut = prompt.concat(" ", consoleIn);
-
   }
 };
 

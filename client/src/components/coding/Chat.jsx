@@ -32,7 +32,7 @@ export default function Chat({ chat }) {
         {/* potato area */}
         <div className="w-1/3 h-full">
           <img
-            className="h-24 transform -scale-x-100 absolute bottom-1 right-1"
+            className="h-24 transform -scale-x-100 fixed bottom-1 right-1"
             src="/images/potatoTutor.png"
             alt="potato tutor"
           />

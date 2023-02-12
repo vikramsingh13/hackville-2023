@@ -9,7 +9,7 @@ function App() {
   const [navTab, setNavTab] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
 
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -19,10 +19,6 @@ function App() {
     fetchData();
     setQuestionIndex(getQuestionIndexLS());
   }, []);
-
-  useEffect(() => {
-    setLocalDialoguesLS(data);
-  }, [data]);
 
   const handleNavClick = () => {
     if(showCoding){
@@ -38,7 +34,8 @@ function App() {
       const response = await axios.get(
         "https://hackville-2023.vercel.app/api/localDialogues"
       );
-      setData(response.data);
+      // setData(response.data);
+      setLocalDialoguesLS(response.data);
       console.log(response.data);
     } catch (error) {
       setError(error.message);

@@ -27,7 +27,7 @@ export function getCurrentPrompt() {
   let index = getQuestionIndexLS();
   let dialogues = JSON.parse(getLocalDialoguesLS());
 
-  console.log(dialogues);
+  console.log(dialogues[index].prompt);
 }
 
 export function getCurrentText() {
