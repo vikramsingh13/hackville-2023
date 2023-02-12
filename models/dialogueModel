@@ -1,0 +1,25 @@
+const mongoose = require('mongoose');
+
+const dialogueSchema = new mongoose.Schema({
+    dialogueID: {
+        type     : Number,
+        required : true,
+        unique   : true,
+        validate : {
+            validator : Number.isInteger,
+            message   : '{VALUE} is not an integer value'
+        }
+    },
+    text: {
+        type: String, 
+        required : true,
+    },
+    checkCode: Boolean,
+    promt: {
+        type: String,
+        required: false
+    }
+
+});
+
+module.exports = mongoose.model('Dialogue', dialogueSchema)

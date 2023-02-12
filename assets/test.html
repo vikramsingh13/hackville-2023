@@ -8,23 +8,19 @@
     <style>
         body {
             margin: 0px;
+            background-image: url(./background.jpg);
+            background-size: cover;
         }
         #container {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; 
             align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        #wrapper {
-            padding: 40px;
-            border: 2px dashed black;
+            justify-content: flex-end;
+            height: 100vh;
         }
         #sky {
             height: 750px;
             width: 1000px;
-            background-image: url(./background.jpg);
-            background-size: cover;
         }
         #ground {
             position: absolute;
@@ -101,23 +97,23 @@
         .hover:hover{
             background-color: #ef444466;
         }
-        div[data-fixed="broken"] .tag2{
+        a[data-fixed="broken"] .tag2{
             display: flex;
             justify-content: center;
             background-color: #ef444466;
             animation: broken 1s infinite alternate;
         }
-        div[data-fixed="fixed"] .tag2{
+        a[data-fixed="fixed"] .tag2{
             display: flex;
             justify-content: center;
             background-color: #4ade8044;
             border: 2px dashed #22c55e;
             color: #22c55e;
         }
-        div[data-fixed="fixed"] img{
+        a[data-fixed="fixed"] img{
             background-color: #4ade8044;
         }
-        div[data-fixed="fixed"] img:hover{
+        a[data-fixed="fixed"] img:hover{
             background-color: #4ade8044;
         }
         @keyframes broken {
@@ -131,34 +127,30 @@
         <div id="wrapper" style="position: relative">
             <div id="sky"></div>
             <!-- <div id="ground"></div> -->
-            <a class="wrapper">
             <img class="prop first" src="./prop1.png">
             <img class="prop third" src="./prop1.png">
             <img class="prop2 fifth" src="./prop2.png">
             <img class="prop2 sixth" src="./prop2.png">
-            <div class="first" data-fixed="broken">
+            <a class="first" data-fixed="broken">
                 <img class="building hover" src="./building1.png">
                 <div class="tag">Print()</div>
                 <div class="tag2">FIX ME</div>
-            </div>
-            <div class="second" data-fixed="broken">
+            </a>
+            <a class="second" data-fixed="broken">
                 <img class="building smaller hover" src="./building2.png">
                 <div class="tag">I/O</div>
                 <div class="tag2">FIX ME</div>
-            </div>
-            <div class="third" data-fixed="broken">
+            </a>
+            <a class="third" data-fixed="broken">
                 <img class="building hover" src="./building3.png">
                 <div class="tag">Vars</div>
                 <div class="tag2">FIX ME</div>
-            </div>
-            <div class="fourth" data-fixed="broken">
+            </a>
+            <a class="fourth" data-fixed="broken">
                 <img class="building smaller hover" src="./building4.png">
                 <div class="tag">Dict</div>
                 <div class="tag2">FIX ME</div>
-            </div>
-        </div>
-        <div class="tag">
-            Please excuse our programmer art
+            </a>
         </div>
     </div>
 </body>

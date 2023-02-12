@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getCohereData} = require('../controllers/promptController');
+const { getCohereData, getDialogues} = require('../controllers/promptController');
 
-router.route('/').get(getCohereData);
+router.route('/prompts').get(getCohereData);
+//router.route('/dialogues').get(getDialogues);
 
 module.exports = router;
