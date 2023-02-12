@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Landing from "./components/landing/Landing";
 import Coding from "./components/coding/Coding";
+import utils from "./utils";
 import axios from "axios";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   useEffect(() => {
     if (!hasRequested) {
       fetchData();
-      setQuestionIndex(getLocalStorage());
+      setQuestionIndex(utils.getLocalStorage());
     }
   }, [hasRequested]);
 
@@ -52,15 +53,6 @@ const fetchData = async () => {
     }
   }
 };
-
-const getLocalStorage = () => {
-  if (localStorage.getItem("questionIndex")) {
-    return localStorage.getItem("questionIndex");
-  } else {
-    localStorage.setItem("questionIndex", 0);
-    return 0;
-  }
-}
   
 
 
