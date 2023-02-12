@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Landing from "./components/landing/Landing";
 import Coding from "./components/coding/Coding";
-import utils from "./utils";
+import setQuestionIndexLS, { getQuestionIndexLS } from "./utils";
 import axios from "axios";
 
 function App() {
@@ -12,26 +12,22 @@ function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [hasRequested, setHasRequested] = useState(false);
 
   useEffect(() => {
-    if (!hasRequested) {
-      fetchData();
-      setQuestionIndex(utils.getLocalStorage());
-    }
-  }, [hasRequested]);
+    fetchData();
+    setQuestionIndex(getQuestionIndexLS());
+  }, []);
 
   return (
     <div className="bg-orange-300">
       {/*  */}
 
       {/* <Landing/> */}
-      <Landing />
-      
-      {/*<Coding
+
+      <Coding
         question="Welcome to the potato nursery! <br><br> First you must help name our potato children, for this we’ll need the print command.Here is an example of the syntax"
         chat="Your output will show up here"
-  />*/}
+      />
     </div>
   );
 }
@@ -53,9 +49,5 @@ const fetchData = async () => {
     }
   }
 };
-  
-
-
-
 
 export default App;

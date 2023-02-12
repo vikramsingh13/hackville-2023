@@ -1,4 +1,4 @@
-const getLocalStorage = () => {
+export function getQuestionIndexLS() {
   if (localStorage.getItem("questionIndex")) {
     return localStorage.getItem("questionIndex");
   } else {
@@ -7,4 +7,6 @@ const getLocalStorage = () => {
   }
 };
 
-return getLocalStorage();
+export default function setQuestionIndexLS(index) {
+  localStorage.setItem("questionIndex", index);
+}
