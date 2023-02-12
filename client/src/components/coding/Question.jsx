@@ -10,9 +10,7 @@ export default function Question({ question }) {
 		<div className="bg-neutral-50 m-5 rounded-lg">
 			<p className="m-3 p-6 text-2xl font-medium text-black" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(question) }}></p>
 		</div>
-		<button className="w-3/12 bg-green-600 text-xl rounded-full active:bg-green-400 text-white p-3 absolute bottom-5 left-16">
-			Next
-		</button>
+
     </div>
   );
 }
