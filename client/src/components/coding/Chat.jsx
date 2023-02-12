@@ -29,8 +29,15 @@ export default function Chat({ chatArray, conCaterHuman }) {
       } else {
         temp.push(<Request text={chatEl[1]} key={uuid()} />);
       }
-    })
+    });
     setFormattedChat(temp);
+
+    //Making it scroll to bottom
+    let chatArea = document.querySelector("#chadChatson");
+    chatArea.scroll({
+      top: chatArea.scrollHeight,
+      bechavior: "smooth",
+    });
   }, [chatArrayState]);
 
   return (
@@ -58,7 +65,7 @@ export default function Chat({ chatArray, conCaterHuman }) {
           </div>
 
           {/* Bubbles */}
-          <div className="overflow-y-scroll flex flex-col">
+          <div id="chadChatson" className="overflow-y-scroll flex flex-col">
             {...formattedChat}
           </div>
         </div>

@@ -27,6 +27,7 @@ export function getCurrentPrompt() {
   let index = getQuestionIndexLS();
   let dialogues = JSON.parse(getLocalDialoguesLS());
   if(dialogues[index] !== undefined && dialogues[index].prompt !== undefined){
+    console.log("PROMPT: " + dialogues[index].prompt);
     return dialogues[index].prompt;
   } else {
     return false;

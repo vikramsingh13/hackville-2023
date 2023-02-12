@@ -6,10 +6,7 @@ import axios from "axios";
 import setQuestionIndexLS, { getCurrentPrompt, getCurrentText, getQuestionIndexLS, isCheckCode, setLocalDialoguesLS } from "../../utils";
 
 const Coding = ({ handleNavClick }) => {
-  const [chatArray, setChatArray] = useState([
-    ["ai", "hello"],
-    ["human", "world"],
-  ]);
+  const [chatArray, setChatArray] = useState([]);
   const [consoleDisabled, setConsoleDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(false);
   const [question, setQuestion] = useState("");
@@ -21,10 +18,11 @@ const Coding = ({ handleNavClick }) => {
   },[]);
 
   useEffect(() => {
-    if(getCurrentPrompt() !== ""){
+    console.log("checkCode: " + isCheckCode());
+    if(!isCheckCode()){
       conCater("");
     }
-  },[]);
+  },[question]);
 
   const updateQuestion = async() => {
     let temp = getCurrentText();
@@ -33,11 +31,12 @@ const Coding = ({ handleNavClick }) => {
 
   const conCater = async (consoleIn) => {
     let reqPrompt = getCurrentPrompt();
-    if(reqPrompt){
+    if(!reqPrompt){
       reqPrompt = "";
     }
     let request = reqPrompt + " " + consoleIn;
 
+    console.log("AI REQUEST: " + request);
     let aiResponse = await axios.get(
       'https://hackville-2023.vercel.app/api/prompts?prompt="' + request + '"'
     );
@@ -69,11 +68,11 @@ const Coding = ({ handleNavClick }) => {
     let prompt = getCurrentPrompt();
     let code = isCheckCode();
     
-    if(prompt && !code){
+    if(!code){
       console.log(code);
       //setConsoleDisabled(true);
       await conCater("");
-    } else if(prompt && code){
+    } else if(code){
       //todo
       //setConsoleDisabled(false);
     }
