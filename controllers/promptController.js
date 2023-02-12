@@ -113,10 +113,15 @@ const getCohereData = asyncHandler(async(req, res) => {
 //@desc Get dialogues for tutorial from database
 //@path GET /api/dialogues
 //ACCESS PRIVATE
-/*const getDialogues = asyncHandler(async(req, res) => {
+const getDialogues = asyncHandler(async(req, res) => {
     const dialogues = await dialogueModel.find();
-    res.status(200).json(dialogues);
-})*/
+    if(dialogues){
+        res.status(200).json(dialogues);
+    } else {
+        res.status(400)
+        throw new Error("Please add a prompt key with value to the request body json");
+    }
+})
 
 //@desc Get dialogues from local db
 //@path GET /api/localDialogues

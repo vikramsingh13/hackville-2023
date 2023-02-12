@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import { getQuestionIndexLS } from "../../utils";
 import './Landing.css';
 
 export default function Landing({handleNavClick}) {
+  const [progress, setProgress] = useState([0,0,0,0]);
+
+  useEffect(() => {
+    let temp = getQuestionIndexLS();
+    setProgress(temp);
+
+  });
   return (
     <div id="container">
       <div id="wrapper">
