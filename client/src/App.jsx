@@ -15,6 +15,12 @@ function App() {
   useEffect(() => {
     if (!hasRequested) {
       fetchData();
+
+
+      // if state var doesnt exist
+      // create a state variable for the data in browser local storage
+
+
     }
   }, [hasRequested]);
 
@@ -48,6 +54,18 @@ const fetchData = async () => {
     }
   }
 };
+
+const getLocalStorage = () => {
+  if (localStorage.getItem("questionIndex")) {
+    let questionIndex = localStorage.getItem("questionIndex");
+  } else {
+    localStorage.setItem("questionIndex", 0);
+    let questionIndex = 0;
+  }
+}
+  
+
+
 
 
 export default App;
