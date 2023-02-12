@@ -21,6 +21,9 @@ const Coding = ({ handleNavClick }) => {
     console.log("checkCode: " + isCheckCode());
     if(!isCheckCode()){
       conCater("");
+      setConsoleDisabled(true);
+    } else {
+      setConsoleDisabled(false);
     }
   },[question]);
 
@@ -68,14 +71,6 @@ const Coding = ({ handleNavClick }) => {
     let prompt = getCurrentPrompt();
     let code = isCheckCode();
     
-    if(!code){
-      console.log(code);
-      //setConsoleDisabled(true);
-      await conCater("");
-    } else if(code){
-      //todo
-      //setConsoleDisabled(false);
-    }
     let index = getQuestionIndexLS();
     index = parseInt(index);
     setQuestionIndexLS(index + 1);

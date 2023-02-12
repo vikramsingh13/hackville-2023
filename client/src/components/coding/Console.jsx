@@ -3,7 +3,8 @@ import React from 'react'
 export default function Console( {conCater, consoleDisabled} ) {
 
     const handleRun = () => {
-        if(!consoleDisabled){
+        console.log("Console Dissaabled: " + consoleDisabled);
+        if(consoleDisabled){
             alert("Please wait for a question asking you to add some code.");
         } else {
             let consoleText = document.getElementById('consoleText').value;
