@@ -23,6 +23,10 @@ const Coding = ({ question, chat }) => {
       </button>
     </div>
   );
+  function conCater(prompt, consoleIn){
+    let textOut = prompt.concat(" ", consoleIn);
+
+  }
 };
 
 export default Coding;
