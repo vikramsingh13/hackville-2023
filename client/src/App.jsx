@@ -7,7 +7,7 @@ function App() {
   const [navTab, setNavTab] = useState(0);
 
   return (
-    <div className="">
+    <div className="bg-orange-300">
 		{/* <Landing/> */}
     <Coding 
       question= "Welcome to the potato nursery! <br><br> First you must help name our potato children, for this we’ll need the print command.Here is an example of the syntax"
