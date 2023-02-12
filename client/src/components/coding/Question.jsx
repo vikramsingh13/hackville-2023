@@ -7,8 +7,8 @@ export default function Question({ question }) {
       	<h1 className="text-4xl text-center m-0 bg-slate-800 text-white p-8 border-b border-dashed border-black">
 			Question
 	  	</h1>
-		<div>
-			<p className="m-3 p-4 text-lg text- text-black" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(question) }}></p>
+		<div className="bg-neutral-50 m-5 rounded-lg">
+			<p className="m-3 p-6 text-2xl font-medium text-black" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(question) }}></p>
 		</div>
     </div>
   );
