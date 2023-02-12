@@ -14,7 +14,7 @@ const Coding = ({ handleNavClick }) => {
     let request = prompt + " " + consoleIn;
 
     let aiResponse = await axios.get(
-      "https://hackville-2023.vercel.app/api/prompts?prompt=" + request + '"'
+      'https://hackville-2023.vercel.app/api/prompts?prompt="' + request + '"'
     );
 
     setChatArray([
