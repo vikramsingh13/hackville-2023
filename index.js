@@ -2,24 +2,21 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const path = require('path');
 const cors = require('cors');
-//todo
-//const {errorHandler} = require('./middlewares/errorMiddleware');
+const {errorHandler} = require('./middlewares/errorMiddleware');
 const connectDB = require('./config/db');
 
 
 const PORT = process.env.PORT || 3001;
 
 //connecting to mongodb atlas
-//todo
-//also use try catch
-//connectDB();
+connectDB();
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
-app.use('/api/prompts', require("./routes/promptRoutes"));
+app.use('/api', require("./routes/promptRoutes"));
 
 //serving static frontend for production
 if(process.env.NODE_ENV === 'production'){
@@ -37,7 +34,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 //custom errorHandler
-//app.use(errorHandler);
+app.use(errorHandler);
 
 app.listen(PORT, (err)=>{
     if(err) {
