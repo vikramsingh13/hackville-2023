@@ -30,6 +30,7 @@ function App() {
 
   const fetchData = async () => {
     setLoading(true);
+    console.log("data fetching");
     try {
       const response = await axios.get(
         "https://hackville-2023.vercel.app/api/localDialogues"

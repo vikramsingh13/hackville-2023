@@ -1,13 +1,17 @@
 import React from 'react'
 
-export default function Console( {conCater} ) {
+export default function Console( {conCater, consoleDisabled} ) {
 
     const handleRun = () => {
-        let consoleText = document.getElementById('consoleText').value;
-        if(consoleText === ""){
-            alert("Please enter your code in the console");
-        } else{
-            conCater(consoleText);
+        if(consoleDisabled){
+            alert("Please wait for a question asking you to add some code.");
+        } else {
+            let consoleText = document.getElementById('consoleText').value;
+            if(consoleText === ""){
+                alert("Please enter your code in the console");
+            } else{
+                conCater(consoleText);
+            }
         }
     }
 
