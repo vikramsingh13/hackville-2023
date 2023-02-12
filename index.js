@@ -9,7 +9,7 @@ const connectDB = require('./config/db');
 const PORT = process.env.PORT || 3001;
 
 //connecting to mongodb atlas
-connectDB();
+//connectDB();
 
 const app = express();
 app.use(express.json());
