@@ -13,6 +13,8 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const [showCoding, setShowCoding]= useState(true);
+
   useEffect(() => {
     fetchData();
     setQuestionIndex(getQuestionIndexLS());
@@ -21,6 +23,10 @@ function App() {
   useEffect(() => {
     setLocalDialoguesLS(JSON.stringify(data));
   }, [data]);
+
+  const handleNavClick = (e) => {
+
+  };
 
   const fetchData = async () => {
     setLoading(true);
@@ -40,14 +46,7 @@ function App() {
 
   return (
     <div className="bg-orange-300">
-      {/*  */}
-
-      {/* <Landing/> */}
-
-      <Coding
-        question="Welcome to the potato nursery! <br><br> First you must help name our potato children, for this we’ll need the print command.Here is an example of the syntax"
-        chat="Your output will show up here"
-      />
+      {showCoding ? <Coding /> : <Landing handleNavClick={handleNavClick}/>}
     </div>
   );
 }
