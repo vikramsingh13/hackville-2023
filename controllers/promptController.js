@@ -1,7 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const cohere = require('cohere-ai');
 cohere.init(process.env.COHERE_API_KEY);
-const dialogueModel = require('../models/dialogueModel')
+//const dialogueModel = require('../models/dialogueModel')
 
 //@desc Get data from co:here ai
 //@path GET /api/prompts
@@ -27,9 +27,9 @@ const getCohereData = asyncHandler(async(req, res) => {
 //@desc Get dialogues for tutorial from database
 //@path GET /api/dialogues
 //ACCESS PRIVATE
-const getDialogues = asyncHandler(async(req, res) => {
+/*const getDialogues = asyncHandler(async(req, res) => {
     const dialogues = await dialogueModel.find();
     res.status(200).json(dialogues);
-})
+})*/
 
-module.exports = { getCohereData, getDialogues }
+module.exports = { getCohereData}
