@@ -3,7 +3,7 @@
     "$oid": "63e820400c033c145aa263cd"
   },
   "dialogueID": 0,
-  "text": "Welcome to the potato nursery! First you must help name our potato children, for this we’ll need the print command.Here is an example of the syntax",
+  "text": "Welcome to the potato nursery! <br>First you must help name our potato children, for this we’ll need the print command.<br>Here is an example of the syntax",
   "prompt": "How to use print in python for kids"
 },{
   "_id": {
@@ -18,13 +18,13 @@
     "$oid": "63e820a60c033c145aa263cf"
   },
   "dialogueID": 2,
-  "text": "Great job, I would’ve come up with a better name but you are only human so your inferiority is expected! Move to the next section when you’re ready!"
+  "text": "Great job, I would’ve come up with a better name but you are only human so your inferiority is expected! <br>Move to the next section when you’re ready!"
 },{
   "_id": {
     "$oid": "63e8312223bf6e8ca2d6bfb3"
   },
   "dialogueID": 3,
-  "text": "Since you know how to output string it's time for you to learn how to assign variables! We need to ensure as our children are in the womb they get all the water they need. You need to assign a water level to a potato in dire need of water! Here is a guide on how to create variables.",
+  "text": "Since you know how to output string it's time for you to learn how to assign variables! <br>We need to ensure as our children are in the womb they get all the water they need. You need to assign a water level to a potato in dire need of water! Here is a guide on how to create variables.",
   "prompt": "how to name variables in python"
 },{
   "_id": {
@@ -39,20 +39,20 @@
     "$oid": "63e834de06c6f7d7e57ae206"
   },
   "dialogueID": 5,
-  "text": "Great job! For a human of course… our child should be able to grow to be big and strong. Move to the next section when you’re ready!"
+  "text": "Great job! For a human of course… our child should be able to grow to be big and strong.<br> Move to the next section when you’re ready!"
 },{
   "_id": {
     "$oid": "63e8355406c6f7d7e57ae207"
   },
   "dialogueID": 6,
-  "text": "This is the resource depot, here you will learn input and output to control the flow of resources in and out of the building. Here is a short explanation of the input and output process in python.",
+  "text": "This is the resource depot, here you will learn input and output to control the flow of resources in and out of the building.<br> Here is a short explanation of the input and output process in python.",
   "prompt": "Explain input and output in python for kids"
 },{
   "_id": {
     "$oid": "63e835cf06c6f7d7e57ae208"
   },
   "dialogueID": 7,
-  "text": "Now go ahead and write a program that takes user input and outputs it! You will need to use some knowledge from previous sections.",
+  "text": "Now go ahead and write a program that takes user input and outputs it!<br> You will need to use some knowledge from previous sections.",
   "prompt": "What does this python code do:",
   "checkCode": true
 },{
@@ -66,7 +66,7 @@
     "$oid": "63e836b706c6f7d7e57ae20a"
   },
   "dialogueID": 9,
-  "text": "Welcome to the oxygen level regulation room! This is one of the most important buildings since it’s our lifeline. In here you will learn conditional statements",
+  "text": "Welcome to the oxygen level regulation room! <br>This is one of the most important buildings since it’s our lifeline. <br>In here you will learn conditional statements",
   "prompt": "Explain conditional statements in python for kids"
 },{
   "_id": {
