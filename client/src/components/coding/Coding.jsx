@@ -5,9 +5,11 @@ import Question from "./Question";
 import axios from "axios";
 import { getCurrentPrompt, getCurrentText } from "../../utils";
 
-
 const Coding = ({ handleNavClick }) => {
-  const [chatArray, setChatArray] = useState([['ai', 'hello'], ['human', 'world']]);
+  const [chatArray, setChatArray] = useState([
+    ["ai", "hello"],
+    ["human", "world"],
+  ]);
 
   const conCater = async (consoleIn) => {
     let prompt = getCurrentPrompt();
@@ -23,10 +25,10 @@ const Coding = ({ handleNavClick }) => {
     ]);
   };
 
-  const conCaterHuman = async(chatIn) => {
-    setChatArray([...chatArray, ['human', chatIn]]);
+  const conCaterHuman = async (chatIn) => {
+    setChatArray([...chatArray, ["human", chatIn]]);
     console.log(chatArray);
-  }
+  };
 
   return (
     <div className="flex h-screen">
@@ -36,7 +38,11 @@ const Coding = ({ handleNavClick }) => {
       />
       <div className="flex-1 flex-col border-2 h-1/2 border-dark-orange-500">
         <Console className="" conCater={conCater} />
-        <Chat className="" chatArray={chatArray} conCaterHuman={conCaterHuman} />
+        <Chat
+          className=""
+          chatArray={chatArray}
+          conCaterHuman={conCaterHuman}
+        />
       </div>
 
       <button
