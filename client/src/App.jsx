@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Landing from "./components/landing/Landing";
 import Coding from "./components/coding/Coding";
-import setQuestionIndexLS, { getQuestionIndexLS } from "./utils";
+import setQuestionIndexLS, { getQuestionIndexLS, setLocalDialoguesLS} from "./utils";
 import axios from "axios";
 
 function App() {
@@ -18,6 +18,26 @@ function App() {
     setQuestionIndex(getQuestionIndexLS());
   }, []);
 
+  useEffect(() => {
+    setLocalDialoguesLS(JSON.stringify(data));
+  }, [data]);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        "https://hackville-2023.vercel.app/api/localDialogues"
+      );
+      setData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   return (
     <div className="bg-orange-300">
       {/*  */}
@@ -32,22 +52,6 @@ function App() {
   );
 }
 
-const fetchData = async () => {
-  setLoading(true);
-  if (!hasRequested) {
-    try {
-      const response = await axios.get(
-        "https://hackville-2023.vercel.app/api/localDialogues"
-      );
-      setData(response.data);
-      setHasRequested(true);
-      console.log(response.data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-};
+
 
 export default App;
