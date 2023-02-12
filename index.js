@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config();
 const path = require('path');
 const cors = require('cors');
 const {errorHandler} = require('./middlewares/errorMiddleware');
-const connectDB = require('./config/db');
+//const connectDB = require('./config/db');
 
 
 const PORT = process.env.PORT || 3001;
