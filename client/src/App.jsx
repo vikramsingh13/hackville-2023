@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [showCoding, setShowCoding]= useState(true);
+  const [showCoding, setShowCoding]= useState(false);
 
   useEffect(() => {
     fetchData();
