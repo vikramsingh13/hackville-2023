@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const [showCoding, setShowCoding]= useState(false);
+  const [showCoding, setShowCoding]= useState(true);
 
   useEffect(() => {
     fetchData();
@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setLocalDialoguesLS(JSON.stringify(data));
+    setLocalDialoguesLS(data);
   }, [data]);
 
   const handleNavClick = () => {

@@ -20,7 +20,7 @@ export function getLocalDialoguesLS() {
 }
 
 export function setLocalDialoguesLS(data) {
-  localStorage.setItem("localDialogues", data);
+  localStorage.setItem("localDialogues", JSON.stringify(data));
 }
 
 export function getCurrentPrompt() {
