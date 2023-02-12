@@ -30,14 +30,19 @@ const Coding = ({ handleNavClick }) => {
   };
 
   const conCaterHuman = async (chatIn) => {
-    setChatArray([...chatArray, ["human", chatIn]]);
-    let aiResponse = await axios.get(
-      'https://hackville-2023.vercel.app/api/prompts?prompt="' + chatIn + '"'
-    );
-    //human is added double for a reason
-    //to prevent override from async or react nonsense
-    setChatArray([...chatArray, ["human", chatIn], ["ai", aiResponse.data.message.body.generations[0].text]]);
-
+    setChatArray([...chatArray, ["human", chatIn], ["ai", "Processing..."]]);
+    try{
+      let aiResponse = await axios.get(
+        'https://hackville-2023.vercel.app/api/prompts?prompt="' + chatIn + '"'
+      );
+      //human is added double for a reason
+      //to prevent override from async or react nonsense
+      setChatArray([...chatArray, ["human", chatIn], ["ai", aiResponse.data.message.body.generations[0].text]]);
+      }
+    catch(err){
+      console.log("Following error occurred: " + err.message);
+      setChatArray([...chatArray, ["human", chatIn], ["ai", "Sorry something went wrong."]]);
+    }
   };
 
   return (
