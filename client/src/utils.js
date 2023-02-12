@@ -34,5 +34,5 @@ export function getCurrentText() {
   let index = getQuestionIndexLS();
   let dialogues = JSON.parse(getLocalDialoguesLS());
 
-  console.log(dialogues);
+  console.log(dialogues[index]);
 }
