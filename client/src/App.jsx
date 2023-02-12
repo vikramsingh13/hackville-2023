@@ -25,10 +25,12 @@ function App() {
       {/*  */}
 
       {/* <Landing/> */}
-      <Coding
+      <Landing />
+      
+      {/*<Coding
         question="Welcome to the potato nursery! <br><br> First you must help name our potato children, for this we’ll need the print command.Here is an example of the syntax"
         chat="Your output will show up here"
-      />
+  />*/}
     </div>
   );
 }
