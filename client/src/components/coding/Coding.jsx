@@ -5,18 +5,18 @@ import Question from './Question';
 
 const Coding = ({question, chat}) => {
     return (
-        <div class="flex h-screen">
+        <div className="flex h-screen">
             <Question 
                 question={question}
-                class="w-1/3 border-2 border-dark-orange-500"                
+                className="w-1/3 border-2 border-dark-orange-500"                
             />
-            <div class="flex-1 flex-col border-2 h-1/2 border-dark-orange-500">
+            <div className="flex-1 flex-col border-2 h-1/2 border-dark-orange-500">
                 <Console
-                    class=""
+                    className=""
                 />
                 <Chat 
                     chat={chat}
-                    class=""
+                    className=""
                 />
             </div>
         </div>
