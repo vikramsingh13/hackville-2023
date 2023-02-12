@@ -31,7 +31,13 @@ const Coding = ({ handleNavClick }) => {
 
   const conCaterHuman = async (chatIn) => {
     setChatArray([...chatArray, ["human", chatIn]]);
-    console.log(chatArray);
+    let aiResponse = await axios.get(
+      'https://hackville-2023.vercel.app/api/prompts?prompt="' + chatIn + '"'
+    );
+    //human is added double for a reason
+    //to prevent override from async or react nonsense
+    setChatArray([...chatArray, ["human", chatIn], ["ai", aiResponse.data.message.body.generations[0].text]]);
+
   };
 
   return (

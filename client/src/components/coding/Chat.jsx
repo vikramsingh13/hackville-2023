@@ -6,14 +6,32 @@ import uuid from "react-uuid";
 export default function Chat({ chatArray, conCaterHuman }) {
   const [chatValue, setChatValue] = useState("");
   const [chatArrayState, setChatArrayState] = useState(chatArray);
+  const [formattedChat, setFormattedChat] = useState([]);
 
   const handleOnTextChange = (e) => {
     setChatValue(e.target.value);
   };
 
+  const handleSend = () => {
+    conCaterHuman(chatValue);
+    setChatValue("");
+  };
+
   useEffect(() => {
     setChatArrayState([...chatArray]);
   }, [chatArray]);
+
+  useEffect(() => {
+    let temp = [];
+    chatArrayState.map((chatEl) => {
+      if (chatEl[0] === "ai") {
+        temp.push(<Response text={chatEl[1]} key={uuid()} />);
+      } else {
+        temp.push(<Request text={chatEl[1]} key={uuid()} />);
+      }
+    })
+    setFormattedChat(temp);
+  }, [chatArrayState]);
 
   return (
     <div className="w-full bg-orange-300">
@@ -33,7 +51,7 @@ export default function Chat({ chatArray, conCaterHuman }) {
             ></textarea>
             <button
               className="bg-green-300 p-1 rounded-full pl-6 pr-6 active:bg-green-400"
-              onClick={() => conCaterHuman(chatValue)}
+              onClick={handleSend}
             >
               Send
             </button>
@@ -41,13 +59,7 @@ export default function Chat({ chatArray, conCaterHuman }) {
 
           {/* Bubbles */}
           <div className="overflow-y-scroll flex flex-col">
-            {chatArrayState.map((chatEl) => {
-              if (chatEl[0] === "ai") {
-                return <Response text={chatEl[1]} key={uuid()} />;
-              } else {
-                return <Request text={chatEl[1]} key={uuid()} />;
-              }
-            })}
+            {...formattedChat}
           </div>
         </div>
 
