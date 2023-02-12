@@ -19,19 +19,14 @@ const Coding = ({ handleNavClick }) => {
     }
     let request = prompt + " " + consoleIn;
 
-    try {
-      console.log(request);
-      let aiResponse = await axios.get(
-        'https://hackville-2023.vercel.app/api/prompts?prompt="' + request + '"'
-      );
-      setChatArray([
-        ...chatArray,
-        ["ai", aiResponse.data.message.body.generations[0].text],
-      ]);
-      console.log(chatArray);
-    } catch (error) {
-      console.log(error.message);
-    }
+    let aiResponse = await axios.get(
+      'https://hackville-2023.vercel.app/api/prompts?prompt="' + request + '"'
+    );
+
+    setChatArray([
+      ...chatArray,
+      ["ai", aiResponse.data.message.body.generations[0].text],
+    ]);
   };
 
   const conCaterHuman = async (chatIn) => {
