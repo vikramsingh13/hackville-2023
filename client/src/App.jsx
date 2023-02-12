@@ -6,6 +6,7 @@ import axios from "axios";
 function App() {
   const [count, setCount] = useState(0);
   const [navTab, setNavTab] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(0);
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -15,6 +16,7 @@ function App() {
   useEffect(() => {
     if (!hasRequested) {
       fetchData();
+      setQuestionIndex(getLocalStorage());
     }
   }, [hasRequested]);
 
@@ -50,6 +52,18 @@ const fetchData = async () => {
     }
   }
 };
+
+const getLocalStorage = () => {
+  if (localStorage.getItem("questionIndex")) {
+    return localStorage.getItem("questionIndex");
+  } else {
+    localStorage.setItem("questionIndex", 0);
+    return 0;
+  }
+}
+  
+
+
 
 
 export default App;
