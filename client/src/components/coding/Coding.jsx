@@ -36,10 +36,19 @@ const Coding = ({ handleNavClick }) => {
     let reqPrompt = getCurrentPrompt();
     if(!reqPrompt){
       reqPrompt = "";
+      if(consoleIn === ""){
+        return;
+      }
     }
     let request = reqPrompt + " " + consoleIn;
 
     console.log("AI REQUEST: " + request);
+
+    setChatArray([
+      ...chatArray,
+      ["ai", "Processing..."],
+    ]);
+
     let aiResponse = await axios.get(
       'https://hackville-2023.vercel.app/api/prompts?prompt="' + request + '"'
     );
